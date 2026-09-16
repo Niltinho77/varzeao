@@ -1,0 +1,5 @@
+import { getRodadas } from '@/lib/data';
+import { Confronto } from '@/components/confronto';
+import { dataCurta } from '@/lib/format';
+export const metadata = { title: 'Rodadas' };
+export default async function Pagina() { const rodadas = await getRodadas(); const proxima = rodadas.find(r => r.status === 'agendada'); return <><div className="titulo-pagina"><div><h1>Rodadas</h1><p>Nove encontros. Cada ponto conta.</p></div><span className="muted">Horários de Brasília</span></div><nav className="rodada-nav" aria-label="Ir para rodada">{rodadas.map(r => <a className={r.id === proxima?.id ? 'selecionada' : ''} href={`#${r.id}`} key={r.id}>{r.numero}ª</a>)}</nav><div className="rodadas-lista">{rodadas.map(r => <section id={r.id} key={r.id} className="rodada-bloco"><div className="secao-cabecalho"><h2>{r.numero}ª rodada <span>· {dataCurta(r.data)}</span></h2><span className={r.status === 'agendada' ? 'selo' : 'muted'}>{r.status === 'encerrada' ? 'Encerrada' : 'Agendada'}</span></div>{r.partidas.map(p => <Confronto key={p.id} partida={p}/>)}</section>)}</div></>; }
