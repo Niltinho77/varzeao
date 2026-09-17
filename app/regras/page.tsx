@@ -14,6 +14,7 @@ export default function Pagina() {
       <p>A demonstração apresenta dez clubes em nove rodadas de turno único. O calendário oficial será publicado pela organização.</p>
       <ul><li>Vitória: 3 pontos.</li><li>Empate: 1 ponto para cada clube.</li><li>Derrota: nenhum ponto.</li></ul>
       <p>Critérios de desempate na classificação, nesta ordem: pontos, número de vitórias, saldo de gols, gols marcados e confronto direto.</p>
+      <p><strong>Classificação e permanência.</strong> Com 20 clubes, os dez primeiros avançam para a Copa Várzeão. Em uma liga com menos de 16 clubes, avançam os oito primeiros. Os quatro últimos são rebaixados e suas vagas ficam abertas para novos clubes na temporada seguinte.</p>
     </section>
 
     <section>
@@ -21,17 +22,6 @@ export default function Pagina() {
       <p>A mensalidade é de R$ {liga.mensalidadeTime} por clube. O capitão recolhe as contribuições do elenco e realiza o pagamento à plataforma.</p>
       <p>A liga está planejada para cerca de 10 semanas e duas mensalidades por clube. Os classificados para a Copa Várzeão pagam uma mensalidade adicional referente ao mês de disputa.</p>
       <p>O painel demonstra o acompanhamento das contribuições individuais. Jogadores com mensalidade pendente aparecem impedidos de ser escalados. Nenhum pagamento ou envio de cobrança é realizado neste site demonstrativo.</p>
-      <h3>Estrutura financeira com 20 clubes</h3>
-      <ul><li>Liga: 20 clubes × R$ 600 = R$ 12.000.</li><li>Copa Várzeão: 10 clubes × R$ 300 = R$ 3.000.</li><li>Arrecadação total estimada: R$ 15.000.</li></ul>
-      <div className="tabela-scroll" tabIndex={0} role="region" aria-label="Distribuição financeira estimada. Role horizontalmente para ver todos os valores.">
-        <table className="regra-tabela"><thead><tr><th scope="col">Saída</th><th scope="col">Valor</th></tr></thead><tbody>
-          <tr><th scope="row">Premiação da liga</th><td>R$ 6.800</td></tr>
-          <tr><th scope="row">Premiação da copa</th><td>R$ 1.800</td></tr>
-          <tr><th scope="row">Taxas de pagamento e custos operacionais</th><td>cerca de R$ 1.250</td></tr>
-          <tr><th scope="row">Sobra estimada</th><td>R$ 5.150</td></tr>
-        </tbody></table>
-      </div>
-      <p className="nota-regra">Observação de caixa: se a liga atravessar três meses corridos por causa de adiamentos, entra uma terceira mensalidade e a sobra aumenta. O planejamento considera duas mensalidades, que é o cenário conservador.</p>
     </section>
 
     <section>
@@ -50,7 +40,7 @@ export default function Pagina() {
 
     <section>
       <h2>5. Premiação</h2>
-      <p>A premiação em dinheiro da liga é distribuída entre os cinco primeiros colocados da classificação final. Do 6º ao 10º, o prêmio é a vaga na Copa Várzeão, que tem premiação própria.</p>
+      <p>A premiação em dinheiro da liga é distribuída entre os cinco primeiros colocados da classificação final. Com 20 clubes, do 6º ao 10º o prêmio é a vaga na Copa Várzeão, que tem premiação própria.</p>
       <h3>Com 20 clubes inscritos</h3>
       <div className="tabela-scroll" tabIndex={0} role="region" aria-label="Premiação da liga com 20 clubes.">
         <table className="regra-tabela regra-tabela-curta"><thead><tr><th scope="col">Colocação</th><th scope="col">Prêmio</th></tr></thead><tbody>
@@ -59,7 +49,7 @@ export default function Pagina() {
       </div>
       <p>Além do dinheiro, a organização entrega o troféu de campeão e os prêmios individuais de artilheiro e de melhor jogador da temporada.</p>
       <h3>Reajuste por número de clubes</h3>
-      <p>A premiação acompanha a arrecadação. A tabela é publicada desde já, para que todo capitão saiba exatamente o que está disputando antes de pagar a primeira mensalidade.</p>
+      <p>A premiação é reajustada conforme o número de clubes confirmados. A tabela é publicada desde já, para que todo capitão saiba exatamente o que está disputando antes de pagar a primeira mensalidade.</p>
       <div className="tabela-scroll" tabIndex={0} role="region" aria-label="Reajuste da premiação conforme o número de clubes. Role horizontalmente para ver todos os valores.">
         <table className="regra-tabela regra-tabela-premios"><thead><tr><th scope="col">Clubes na liga</th><th scope="col">1º</th><th scope="col">2º</th><th scope="col">3º</th><th scope="col">4º</th><th scope="col">5º</th><th scope="col">Total</th></tr></thead><tbody>
           <tr><th scope="row">20</th><td>R$ 3.000</td><td>R$ 2.000</td><td>R$ 1.000</td><td>R$ 500</td><td>R$ 300</td><td>R$ 6.800</td></tr>
