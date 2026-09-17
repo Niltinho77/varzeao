@@ -61,7 +61,7 @@ export function Analitica() {
           </div>
           <div className="consentimento-acoes">
             <button type="button" className="botao secundario" onClick={() => escolher('recusado')}>Continuar sem cookies</button>
-            <button type="button" className="botao" onClick={() => escolher('aceito')}>Aceitar medição</button>
+            <button type="button" className="botao" onClick={() => escolher('aceito')}>Aceitar</button>
           </div>
         </aside>
       )}
