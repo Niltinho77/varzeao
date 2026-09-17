@@ -26,7 +26,13 @@ export async function getTabela(): Promise<LinhaTabela[]> {
     linha.saldo = linha.golsPro - linha.golsContra;
     return linha;
   });
-  return structuredClone(tabela.sort((a,b) => b.pontos - a.pontos || b.saldo - a.saldo || b.golsPro - a.golsPro || a.clube.nome.localeCompare(b.clube.nome, 'pt-BR')));
+  const confrontoDireto = (a: LinhaTabela, b: LinhaTabela) => {
+    const partida = partidas.find(p => p.status === 'encerrada' && [p.mandanteId, p.visitanteId].includes(a.clube.id) && [p.mandanteId, p.visitanteId].includes(b.clube.id));
+    if (!partida || partida.golsMandante === partida.golsVisitante) return 0;
+    const vencedorId = partida.golsMandante! > partida.golsVisitante! ? partida.mandanteId : partida.visitanteId;
+    return vencedorId === a.clube.id ? -1 : 1;
+  };
+  return structuredClone(tabela.sort((a,b) => b.pontos - a.pontos || b.vitorias - a.vitorias || b.saldo - a.saldo || b.golsPro - a.golsPro || confrontoDireto(a,b) || a.clube.nome.localeCompare(b.clube.nome, 'pt-BR')));
 }
 export async function getPainelCapitao(): Promise<PainelCapitao> {
   const clube = (await getClube(clubeDemonstracao))!;

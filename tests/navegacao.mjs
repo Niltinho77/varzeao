@@ -1,14 +1,15 @@
 import { chromium } from '@playwright/test';
 import assert from 'node:assert/strict';
+const baseUrl = process.env.BASE_URL ?? 'http://localhost:3000';
 const navegador = await chromium.launch({channel:'chrome',headless:true});
 try {
   const pagina = await navegador.newPage();
   const erros = [];
-  pagina.on('pageerror',erro => erros.push(erro.message));
+  pagina.on('pageerror',erro => erros.push(`${pagina.url()}: ${erro.message}`));
   for(const largura of [375,1440]) {
     await pagina.setViewportSize({width:largura,height:1000});
     for(const rota of ['/capitao','/tabela','/rodadas','/clube/vila-aurora','/mercado','/','/regras']) {
-      const resposta = await pagina.goto(`http://localhost:3000${rota}`);
+      const resposta = await pagina.goto(`${baseUrl}${rota}`);
       assert.equal(resposta.status(),200);
       await pagina.locator('h1').waitFor();
       assert.ok(await pagina.locator('.aviso-exemplo').isVisible());
@@ -31,7 +32,7 @@ try {
       console.log(`OK ${largura}px ${rota}`);
     }
   }
-  await pagina.goto('http://localhost:3000/clube/nao-existe');
+  await pagina.goto(`${baseUrl}/clube/nao-existe`);
   assert.ok(await pagina.getByRole('heading',{name:'Fora das quatro linhas.'}).isVisible());
   assert.deepEqual(erros,[]);
 } finally {await navegador.close();}

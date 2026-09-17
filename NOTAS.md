@@ -30,9 +30,9 @@ Ao colocar dados reais no painel, autenticação e autorização serão obrigat�
 ## Pendente para a versão final
 
 - A pré-inscrição pelo WhatsApp (48) 98871-6244 está configurada em `lib/liga.ts`. O link preenche uma mensagem com time, capitão, elenco, plataforma e disponibilidade; não envia automaticamente. A competição começa quando fecharem as equipes.
-- Mensalidade definida: R$ 300 por time/mês, recolhida pelo capitão junto ao elenco e paga por ele à plataforma. Divisão igual entre 12 e 15 jogadores: R$ 25 a R$ 20 por pessoa. O site não cobra nem recebe pagamentos.
-- Premiação em dinheiro do primeiro ao quinto colocado e copas com premiação: definir valores e distribuição. Definir dias e horários das duas rodadas semanais, desempates, suspensões, atrasos e recursos.
-- Elencos de 12 a 15 jogadores, goleiro obrigatoriamente IA e no máximo mais uma IA na linha. Os dados da temporada exemplo continuam ilustrativos, sem simulação de escalação com IA.
+- Mensalidade definida: R$ 300 por clube/mês, recolhida pelo capitão junto ao elenco e paga por ele à plataforma. A liga prevê duas mensalidades e a Copa Várzeão uma mensalidade adicional para os classificados. O site não cobra nem recebe pagamentos.
+- A primeira temporada oferece 20 vagas e exige no mínimo 10 clubes. Premiação, reajustes, Copa Várzeão, adiamentos, registro de resultados, idade mínima, reembolso e identidade dos clubes estão publicados no regulamento. Dias e horários das rodadas e regras disciplinares detalhadas ainda precisam ser definidos.
+- Elencos de 14 a 20 jogadores, goleiro obrigatoriamente IA e no máximo duas posições de linha com IA. Os dados da temporada exemplo continuam ilustrativos, com 15 jogadores por clube e sem simulação de escalação com IA.
 - Janelas de transferências no início, meio e final da temporada, com valor inicial igual para todos. Valor e condições ainda não definidos; nenhum mecanismo de saldo, moeda ou proposta foi implementado.
 - WO definido como 1 × 0 com gol de jogador fictício; expulsão após três WOs. Definir tratamento dos resultados após expulsão. Não foram adicionados WOs artificiais aos resultados demonstrativos.
 - Grupo confirmado: versões de PS4 e Xbox One, sem PC. Em PS5 ou Xbox Series X|S, o participante deve executar a versão da geração anterior correspondente. As versões nativas da nova geração não participam.

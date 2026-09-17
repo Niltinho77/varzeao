@@ -24,7 +24,11 @@ test('estatísticas individuais e classificação reconciliam com as súmulas', 
     assert.equal(linha.saldo,linha.golsPro-linha.golsContra);
   }
   assert.equal(tabela.reduce((a,c) => a+c.golsPro,0),tabela.reduce((a,c) => a+c.golsContra,0));
-  for(let i=1;i<tabela.length;i++) assert.ok(tabela[i-1].pontos>tabela[i].pontos || (tabela[i-1].pontos===tabela[i].pontos && tabela[i-1].saldo>=tabela[i].saldo));
+  for(let i=1;i<tabela.length;i++) {
+    const anterior = tabela[i-1], atual = tabela[i];
+    assert.ok(anterior.pontos > atual.pontos || (anterior.pontos === atual.pontos && anterior.vitorias >= atual.vitorias));
+    if (anterior.pontos === atual.pontos && anterior.vitorias === atual.vitorias) assert.ok(anterior.saldo >= atual.saldo);
+  }
 });
 test('painel bloqueia pendentes, mercado filtra e temporada muda sem alterar telas', async () => {
   const painel = await getPainelCapitao();
