@@ -119,8 +119,7 @@ export default function Pagina() {
 
     <section>
       <h2>13. Idade mínima e responsabilidade</h2>
-      <p>A participação é permitida a partir dos 16 anos. Jogadores com menos de 18 anos precisam de autorização por escrito do responsável legal, entregue à organização antes da primeira partida.</p>
-      <p>O capitão é responsável por confirmar que todo o seu elenco cumpre essa condição.</p>
+      <p>A participação é permitida somente a pessoas com 18 anos completos ou mais. O capitão é responsável por confirmar que todo o seu elenco cumpre essa condição antes da primeira partida.</p>
     </section>
 
     <section>

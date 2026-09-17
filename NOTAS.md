@@ -11,6 +11,8 @@ npm run dev
 
 Abra http://localhost:3000. Para uma versão de produção, execute `npm run build` e depois `npm start`. `npm run check` verifica os tipos e `npm test` verifica calendário, estatísticas, classificação, mercado e liberação por mensalidade.
 
+Para ativar a medição de visitas, mapas de clique e gravações de sessão, copie `.env.example` para `.env.local` e preencha `NEXT_PUBLIC_CLARITY_PROJECT_ID` com o identificador público do projeto Microsoft Clarity. No Railway, cadastre a mesma variável no serviço. Sem essa variável, o site funciona normalmente e não carrega o medidor. O visitante pode aceitar ou recusar cookies e reabrir a escolha pelo item **Privacidade** no rodapé.
+
 Com o servidor na porta 3000 e Google Chrome instalado, `npm run test:visual` verifica as sete páginas em 375 e 1440 pixels, ausência de transbordamento da página, filtro do mercado, colunas fixas da classificação e página de clube inexistente. As capturas ficam em `/tmp/varzeao-*.png`. O navegador é usado apenas nos testes, não como dependência da interface.
 
 ## Dados fictícios
